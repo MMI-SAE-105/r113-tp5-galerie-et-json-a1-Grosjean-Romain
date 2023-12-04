@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,26 +9,24 @@
 
 <body x-data="{
 Jolieimage:null,
-async images()
+async d(){
 const rep = await fetch ('images.json');
 return await rep.json();
 }
 }">
 
-: [
-   { ]
-}">
-    
 
 
-<h1>Galerie</h1>
-<p>lorem⇥</p>
-<div class="overlay">
-    <figure><img src="https://picsum.photos/id/237/400/300" alt="image 1"></figure>
-</div>
+    <h1>Galerie</h1>
+    <p>lorem⇥</p>
+    <div class="overlay">
+        <figure><img src="https://picsum.photos/id/237/400/300" alt="image 1"></figure>
+    </div>
 
-<template></template>
+    <template x-for="image in images">
+        <img :src </template>
 
-</div>
+        </div>
 </body>
+
 </html>
