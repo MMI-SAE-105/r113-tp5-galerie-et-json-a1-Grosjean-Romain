@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jolie Galerie</title>
+    <title>Galerie fruitée</title>
     <link rel="icon" href="">
     <link rel="stylesheet" href="/src/css/style.css">
     </link>
@@ -16,14 +16,15 @@
     <h1>Galerie fruitée</h1>
     <p>Une petite faim ? Cliquez sur l'une de ces images pour avoir encore plus faim !</p>
     <div>
-        <img src="/public/img/myrtille.jpg" width=50% height=50% alt="miniature chiot 1"
+        <img class="overlaylike":class="{ active: showImg }" src="/public/img/myrtille.jpg" width=50% height=50% alt="miniature chiot 1"
             @click="showImg = '/public/img/myrtille.jpg'">
-        <img src="/public/img/cassis.jpeg" width=50% height=50% alt="miniature chiot 2"
+        <img class="overlaylike" src="/public/img/cassis.jpeg" width=50% height=50% alt="miniature chiot 2"
             @click="showImg = '/public/img/cassis.jpeg'">
     </div>
-    <div class="overlay" x-show="showImg" @click="showImg = null" @keyup.escape.window="showImg = null">
+    <div class="overlay" :class="{ active: showImg }" x-show="showImg" @click="showImg = null"
+        @keyup.escape.window="showImg = null">
         <figure>
-            <img :src="showImg" alt="Chiot en grand">
+            <img :src="showImg" alt="Fruit en grand">
         </figure>
     </div>
 </body>

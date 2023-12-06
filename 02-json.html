@@ -6,27 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chargement de données JSON</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js"
-        integrity="sha384-RfZlX4KYGO9V6x44WgQ4Z4iSFp6Id6L44F+dt4fe9K1DToCzDf2Jez0s3lbJAUpP"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/src/css/style.css">
+    </link>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js"></script>
 </head>
 
-<body x-data="{ data: null }" x-init="loadData">
+<body>
 
     <h1>Chargement de données JSON</h1>
 
-    <div x-show="data" x-for="item in data">
-        <p x-text="item.nom"></p>
-        <p x-text="item.projet"></p>
-        <p x-text="item.url"></p>
-        <hr>
-    </div>
+    <ul x-data="{ données: {
 
-    <script>
-        function loadData() {
-            fetch('filenameAChanger.json')
-                .then(response => response.json())
-                .then(data => this.data = data);
-        }
-    </script>
+
+<ul x-data="{ async données(){
+    const resp = await fetch('data.json');
+    return await resp.json();
+    } }">
+    
+
+
+</body>
+
+
+
+</ul>
