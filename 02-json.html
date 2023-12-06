@@ -12,14 +12,13 @@
 </head>
 
 <body>
-
     <h1>Chargement de données JSON</h1>
     <ul x-data=" {
         async donnees() {
         const resp = await fetch('data.json');
         return await resp.json();
-            },
-                }">
+        },
+    }">
 
         <template x-for="obj of donnees">
             <li>
@@ -28,7 +27,6 @@
             </li>
         </template>
     </ul>
-    
 </body>
 
 </html>
