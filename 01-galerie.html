@@ -6,46 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jolie Galerie</title>
     <link rel="icon" href="">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/src/css/style.css">
     </link>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js"
-        integrity="sha384-RfZlX4KYGO9V6x44WgQ4Z4iSFp6Id6L44F+dt4fe9K1DToCzDf2Jez0s3lbJAUpP"
-        crossorigin="anonymous"></script>
-    <script defer src="https://unpkg.com/alpinejs"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js"></script>
 </head>
 
 <body x-data="{ 
-   Jolieimage: 'https://picsum.photos/id/237/300/400', }">
-    <h1>Galerie</h1>
-    <p>Test⇥</p>
-    <img src="https://picsum.photos/id/236/100/100" alt="miniature chiot 1"
-        @click="showImg = 'https://picsum.photos/id/236/300/400'">
-    <img src="https://picsum.photos/id/237/100/100" alt="miniature chiot 2"
-        @click="showImg = 'https://picsum.photos/id/237/300/400'">
-
-
-    <img x-on:="click"="showImg = true; Jolieimage= 'https://picsum.photos/id/236/200/300'" alt="miniature chiot 1"
-        src="https://picsum.photos/id/237/100/100">
-    <img x-on:="click"="showImg = true; Jolieimage= 'https://picsum.photos/id/236/200/300'" alt="miniature chiot 1"
-        @click="" src="https://picsum.photos/id/237/100/100">
-
-
-
-
-
-
-    <div class="overlay" x-show="maVar" @click="maVar = null" @keyup.escape.window="maVar = null">
-        <figure><img :src="maVar" alt="chiot"></figure>
+   showImg: 'https://picsum.photos/id/237/300/400', }">
+    <h1>Galerie fruitée</h1>
+    <p>Une petite faim ? Cliquez sur l'une de ces images pour avoir encore plus faim !</p>
+    <div>
+        <img src="https://picsum.photos/id/236/100/100" alt="miniature chiot 1"
+            @click="showImg = 'https://picsum.photos/id/236/300/400'">
+        <img src="https://picsum.photos/id/237/100/100" alt="miniature chiot 2"
+            @click="showImg = 'https://picsum.photos/id/237/300/400'">
     </div>
-
-
-
-    <div class="overlay" x-show="showImg" x-on:click="showImg = null" @keyup.escape.window="showImg = null">
+    <div class="overlay" x-show="showImg" @click="showImg = null" @keyup.escape.window="showImg = null">
         <figure>
             <img :src="showImg" alt="Chiot en grand">
         </figure>
     </div>
-
 </body>
 
 </html>
