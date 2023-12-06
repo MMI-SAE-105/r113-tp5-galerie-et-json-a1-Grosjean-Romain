@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jolie Galerie</title>
     <link rel="icon" href="">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
     </link>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js"
         integrity="sha384-RfZlX4KYGO9V6x44WgQ4Z4iSFp6Id6L44F+dt4fe9K1DToCzDf2Jez0s3lbJAUpP"
@@ -15,26 +15,37 @@
 </head>
 
 <body x-data="{ 
-   Jolieimage: 'https://picsum.photos/id/237/400/300' }">
+   Jolieimage: 'https://picsum.photos/id/237/300/400', }">
     <h1>Galerie</h1>
-    <p>lorem⇥</p>
-    <div class="overlay">
-        x-show="Jolieimage"
-        @click="Jolieimage" =null"
-        <figure><img src="https://picsum.photos/id/237/400/300" alt="image 1"></figure>
-        <img src="https://picsum.photos/id/236/40/60" alt="miniature chiot"
-            @click="Jolieimage = 'https://picsum.photos/id/236/200/300'">
-        <img src="https://picsum.photos/id/237/40/60" alt="miniature chiot"
-            @click="Jolieimage = 'https://picsum.photos/id/237/200/300'">
+    <p>Test⇥</p>
+    <img src="https://picsum.photos/id/236/50/50" alt="miniature chiot 1"
+        @click="showImg = 'https://picsum.photos/id/236/300/400'">
+    <img src="https://picsum.photos/id/237/50/50" alt="miniature chiot 2"
+        @click="showImg = 'https://picsum.photos/id/237/300/400'">
+
+
+    <img x-on:="click"="showImg = true; Jolieimage= 'https://picsum.photos/id/236/200/300'" alt="miniature chiot 1"
+        src="https://picsum.photos/id/237/50/50">
+    <img x-on:="click"="showImg = true; Jolieimage= 'https://picsum.photos/id/236/200/300'" alt="miniature chiot 1"
+        @click="" src="https://picsum.photos/id/237/50/50">
+
+
+
+
+
+
+    <div class="overlay" x-show="maVar" @click="maVar = null" @keyup.escape.window="maVar = null">
+        <figure><img :src="maVar" alt="chiot"></figure>
     </div>
 
 
 
-
-
-
-
+    <div class="overlay" x-show="showImg" x-on:click="showImg = null" @keyup.escape.window="showImg = null">
+        <figure>
+            <img :src="showImg" alt="Chiot en grand">
+        </figure>
     </div>
+
 </body>
 
 </html>
