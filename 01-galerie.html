@@ -12,14 +12,14 @@
 </head>
 
 <body x-data="{ 
-   showImg: 'https://picsum.photos/id/237/300/400', }">
+   showImg: '/public/img/myrtille.jpg', }">
     <h1>Galerie fruitée</h1>
     <p>Une petite faim ? Cliquez sur l'une de ces images pour avoir encore plus faim !</p>
     <div>
-        <img src="https://picsum.photos/id/236/100/100" alt="miniature chiot 1"
-            @click="showImg = 'https://picsum.photos/id/236/300/400'">
-        <img src="https://picsum.photos/id/237/100/100" alt="miniature chiot 2"
-            @click="showImg = 'https://picsum.photos/id/237/300/400'">
+        <img src="/public/img/myrtille.jpg" width=50% height=50% alt="miniature chiot 1"
+            @click="showImg = '/public/img/myrtille.jpg'">
+        <img src="/public/img/cassis.jpeg" width=50% height=50% alt="miniature chiot 2"
+            @click="showImg = '/public/img/cassis.jpeg'">
     </div>
     <div class="overlay" x-show="showImg" @click="showImg = null" @keyup.escape.window="showImg = null">
         <figure>
