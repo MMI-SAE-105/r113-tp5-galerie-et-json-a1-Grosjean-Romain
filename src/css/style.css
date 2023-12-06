@@ -69,18 +69,14 @@ p {
     pointer-events: none;
 }
 
-.overlaylike{
-transition: opac1ity 1s ease;
-pointer-events: none;
+.overlaylike {
+    transition: opacity 1s ease;
+    pointer-events: none;
+
 }
 
 .overlaylike.active {
-    opacity: 1;
-    pointer-events: auto;
-}
 
-.overlay.active {
-    opacity: 1;
     pointer-events: auto;
 }
 

@@ -14,19 +14,21 @@
 <body>
 
     <h1>Chargement de données JSON</h1>
+    <ul x-data=" {
+        async donnees() {
+        const resp = await fetch('data.json');
+        return await resp.json();
+            },
+                }">
 
-    <ul x-data="{ données: {
-
-
-<ul x-data="{ async données(){
-    const resp = await fetch('data.json');
-    return await resp.json();
-    } }">
+        <template x-for="obj of donnees">
+            <li>
+                <span x-text="obj.nom">nom</span>:
+                <a :href="obj.url" x-text="obj.projet">projet</a>
+            </li>
+        </template>
+    </ul>
     
-
-
 </body>
 
-
-
-</ul>
+</html>

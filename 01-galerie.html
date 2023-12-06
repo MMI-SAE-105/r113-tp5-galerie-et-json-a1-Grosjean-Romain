@@ -16,9 +16,11 @@
     <h1>Galerie fruitée</h1>
     <p>Une petite faim ? Cliquez sur l'une de ces images pour avoir encore plus faim !</p>
     <div>
-        <img class="overlaylike":class="{ active: showImg }" src="/public/img/myrtille.jpg" width=50% height=50% alt="miniature chiot 1"
+        <img class="overlaylike" :class="{ active: showImg === '/public/img/myrtille.jpg' }"
+            src="/public/img/myrtille.jpg" width="50%" height="50%" alt="miniature myrtille"
             @click="showImg = '/public/img/myrtille.jpg'">
-        <img class="overlaylike" src="/public/img/cassis.jpeg" width=50% height=50% alt="miniature chiot 2"
+        <img class="overlaylike" :class="{ active: showImg === '/public/img/cassis.jpeg' }"
+            src="/public/img/cassis.jpeg" width="50%" height="50%" alt="miniature cassis"
             @click="showImg = '/public/img/cassis.jpeg'">
     </div>
     <div class="overlay" :class="{ active: showImg }" x-show="showImg" @click="showImg = null"
